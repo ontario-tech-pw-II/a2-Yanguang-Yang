@@ -4,9 +4,14 @@ int main(int argc, char const *argv[])
  	ofstream fout;
 	
 	// check if there are enough arguments
-	
+	if (argc < 2)
+	{
+		cerr<< " There are not enough arguments!" << endl;
+		return 1;
+	}
 	
 	// open the first file
+	ifstream fin(argv[1]);
  	
 	char c;
 
@@ -18,6 +23,7 @@ int main(int argc, char const *argv[])
  	
 
 	// open the second file
+	ofstream fout(argv[2]);
 	
  	if (fout.fail())
  	{
@@ -36,4 +42,4 @@ int main(int argc, char const *argv[])
 
  	 return 0;
 
- } 
+ }
